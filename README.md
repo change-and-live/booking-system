@@ -12,16 +12,15 @@
 - Базовые уведомления (синхронная реализация)
 
 **Технологический стек**
-Backend: Python 3.10
-Framework: Django 4.2
-API: Django REST Framework
-База данных: SQLite (для разработки)
+- Backend: Python 3.10
+- Framework: Django 4.2
+- API: Django REST Framework
+- База данных: SQLite (для разработки)
 
 **Структура проекта**
 ```bash
 booking-system/
-├── .env.example               # Шаблон переменных окружения
-├── .gitignore                 # Игнорируемые файлы
+├── db,sqlite3                 # База данных
 ├── manage.py                  # Django CLI
 ├── README.md                  # Документация
 ├── requirements.txt           # Зависимости
@@ -56,7 +55,7 @@ booking-system/
 ## Установка и запуск
 
 **Шаги установки**
-- Распакуйте проект
+- Клонируйте репозиторй (распакуйте проект)
 - Создайте и активируйте виртуальное окружение
     python -m venv venv
     venv\Scripts\activate     
