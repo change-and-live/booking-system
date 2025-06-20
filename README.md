@@ -18,31 +18,40 @@ API: Django REST Framework
 База данных: SQLite (для разработки)
 
 **Структура проекта**
+```bash
 booking-system/
-├── booking_app/          # Основное приложение
-│   ├── migrations/       # Миграции базы данных
-│   ├── init.py
-│   ├── admin.py          # Админ-панель
-│   ├── apps.py           # Конфигурация приложения
-│   ├── models.py         # Модели данных
-│   ├── serializers.py    # Сериализаторы для API
-│   ├── tasks.py          # Задачи Celery
-│   ├── urls.py           # Маршруты приложения
-│   ├── utils.py          # Вспомогательные функции
-│   └── views.py          # Представления API
-├── config/               # Конфигурация проекта
-│   ├── init.py
-│   ├── asgi.py
-│   ├── celery.py         # Конфигурация Celery
-│   ├── settings.py       # Настройки проекта
-│   ├── urls.py           # Основные маршруты
-│   └── wsgi.py
-├── tests/                # Тесты 
-├── db.sqlite3            # Файл базы данных
-├── manage.py             # Утилита управления Django
-├── README.md             # Документация
-└── requirements.txt      # Зависимости проекта
-
+├── .env.example               # Шаблон переменных окружения
+├── .gitignore                 # Игнорируемые файлы
+├── manage.py                  # Django CLI
+├── README.md                  # Документация
+├── requirements.txt           # Зависимости
+│
+├── booking_app/               # Основное приложение
+│   ├── migrations/            # Миграции БД
+│   ├── __init__.py
+│   ├── admin.py               # Админ-панель
+│   ├── apps.py                # Конфиг приложения
+│   ├── models.py              # Модели: Room, Booking, Facility
+│   ├── serializers.py         # Сериализаторы API
+│   ├── tasks.py               # Celery задачи
+│   ├── urls.py                # Маршруты приложения
+│   ├── utils.py               # Вспомогательные функции
+│   └── views.py               # API представления
+│
+├── config/                    # Конфигурация проекта
+│   ├── __init__.py
+│   ├── asgi.py                # ASGI конфиг
+│   ├── celery.py              # Celery конфиг
+│   ├── settings.py            # Настройки Django
+│   ├── urls.py                # Корневые маршруты
+│   └── wsgi.py                # WSGI конфиг
+│
+└── tests/                     # Тесты
+    ├── __init__.py
+    ├── test_models.py         # Тесты моделей
+    ├── test_tasks.py          # Тесты Celery
+    └── test_views.py          # Тесты API
+```
 --------------
 ## Установка и запуск
 
@@ -59,12 +68,21 @@ booking-system/
     python manage.py createsuperuser
 
 * Дополнительно:
+
 Уже созданные пользователи:
 
-|   name   |   password   |
-|   admin  |     1234     |
-|   ivan   |  password123 |
-|   anna   |  password456 |
+
+*name - password*
+
+
+|   admin - 1234    
+
+
+|   ivan - password123
+
+
+|   anna - password456
+
 
 --------------
 **Запуск приложения**
